@@ -79,8 +79,8 @@ public class TwinsLock implements Lock {
                         Thread.sleep(1000);
                         System.out.println(Thread.currentThread().getName());
                         Thread.sleep(1000);
-                    }catch (InterruptedException e) {
-                            e.printStackTrace();
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
                     } finally {
                         lock.unlock();
                     }
