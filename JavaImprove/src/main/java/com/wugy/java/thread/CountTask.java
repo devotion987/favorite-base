@@ -1,7 +1,5 @@
 package com.wugy.java.thread;
 
-import org.junit.Test;
-
 import java.util.concurrent.ForkJoinPool;
 import java.util.concurrent.Future;
 import java.util.concurrent.RecursiveTask;
