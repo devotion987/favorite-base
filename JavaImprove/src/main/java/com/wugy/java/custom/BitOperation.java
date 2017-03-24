@@ -3,6 +3,8 @@ package com.wugy.java.custom;
 import org.junit.Test;
 
 /**
+ * 位操作
+ * <p>
  * devotion on 2017-02-24 8:32.
  */
 public class BitOperation {
