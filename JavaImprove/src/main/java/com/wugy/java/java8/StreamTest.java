@@ -101,5 +101,15 @@ public class StreamTest {
                 .flatMap(article -> article.getTags().stream())
                 .collect(Collectors.toSet());
     }
+
+    // 验证字符串是否包含集合中的某一字符串
+    @Test
+    public void test2() {
+        List<String> keywords = Arrays.asList("brown", "fox", "dog", "pangram");
+        String tweet = "The quick brown fox jumps over a lazy dog. #pangram http://www.rinkworks.com/words/pangrams.shtml";
+        System.out.println(keywords.stream().allMatch(tweet::contains));;
+        System.out.println(keywords.stream().reduce(false, (b, keyword) -> b || tweet.contains(keyword), (l, r) -> l || r));;
+    }
+
 }
 
