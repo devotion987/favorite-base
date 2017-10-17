@@ -26,8 +26,11 @@ public class ClassLoaderTest {
                 }
             }
         };
-        Object obj = myLoader.loadClass("com.wugy.java.classloader.ClassLoaderTest").newInstance();
-        System.out.println(obj.getClass());
-        System.out.println(obj instanceof com.wugy.java.classloader.ClassLoaderTest);
+
+        Object obj = myLoader.loadClass("java.lang.Object").newInstance();
+        System.out.println(obj instanceof java.lang.Object);
+        //        Object obj = myLoader.loadClass("com.wugy.java.classloader.ClassLoaderTest").newInstance();
+        //        System.out.println(obj instanceof com.wugy.java.classloader.ClassLoaderTest);
+        //        两个类是不同类加载器加载
     }
 }
