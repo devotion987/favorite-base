@@ -6,7 +6,7 @@ import org.junit.Test;
 
 public class CyclicBarrierTest {
 
-    CyclicBarrier c = new CyclicBarrier(3);
+    private CyclicBarrier c = new CyclicBarrier(3);
 
     @Test
     public void testCyclicBarrier() {
@@ -14,12 +14,14 @@ public class CyclicBarrierTest {
             try {
                 c.await();
             } catch (Exception e) {
+                e.printStackTrace();
             }
             System.out.println(1);
         }).start();
         try {
             c.await();
         } catch (Exception e) {
+            e.printStackTrace();
         }
         System.out.println(2);
     }

@@ -7,16 +7,16 @@ import org.junit.Test;
  */
 public class FinalStudy {
 
-    int i;
-    final int j;
-    FinalStudy finalStudy;
+    private int i;
+    private final int j;
+    private FinalStudy finalStudy;
 
     public FinalStudy() {
         i = 1;
         j = 2;
     }
 
-    public void writer() {
+    private void writer() {
         finalStudy = new FinalStudy();
     }
 

@@ -26,6 +26,7 @@ public class SemaphoreTest {
                     System.out.println("save data");
                     s.release();
                 } catch (InterruptedException e) {
+                    e.printStackTrace();
                 }
             });
         }

@@ -8,10 +8,10 @@ import org.junit.Test;
 public class Counter {
 
     public int count = 0;
-    public static int staticCount = 0;
-    public volatile static int volatileCount = 0;
+    private static int staticCount = 0;
+    private volatile static int volatileCount = 0;
 
-    public void inc() {
+    private void inc() {
         try {
             Thread.sleep(1);
         } catch (InterruptedException e) {

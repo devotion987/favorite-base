@@ -50,6 +50,7 @@ public class CountTask extends RecursiveTask<Integer> {
         try {
             System.out.println(result.get());
         } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 }

@@ -11,10 +11,10 @@ import java.util.concurrent.locks.ReentrantLock;
  */
 public class ConditionTest {
 
-    Lock lock = new ReentrantLock();
-    Condition condition = lock.newCondition();
+    private Lock lock = new ReentrantLock();
+    private Condition condition = lock.newCondition();
 
-    public void conditionWait() throws InterruptedException {
+    private void conditionWait() throws InterruptedException {
         lock.lock();
         try {
             condition.await();
@@ -23,7 +23,7 @@ public class ConditionTest {
         }
     }
 
-    public void conditionSignal() throws InterruptedException {
+    private void conditionSignal() throws InterruptedException {
         lock.lock();
         try {
             condition.signal();
