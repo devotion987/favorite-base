@@ -1,4 +1,4 @@
-package com.wugy.java.thread;
+package com.wugy.java.base;
 
 import org.junit.Test;
 
