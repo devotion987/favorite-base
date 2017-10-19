@@ -1,5 +1,5 @@
 //下面是sun.misc.Unsafe.java类源码
-package com.wugy.java.thread;
+package com.wugy.java.concurrent.lock;
 
 import java.lang.reflect.Field;
 

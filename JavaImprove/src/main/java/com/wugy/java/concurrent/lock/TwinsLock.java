@@ -1,4 +1,4 @@
-package com.wugy.java.thread;
+package com.wugy.java.concurrent.lock;
 
 import org.junit.Test;
 

@@ -1,4 +1,4 @@
-package com.wugy.java.thread;
+package com.wugy.java.concurrent.lock;
 
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;

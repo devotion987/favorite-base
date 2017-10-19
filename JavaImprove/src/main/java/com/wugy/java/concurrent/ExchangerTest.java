@@ -1,4 +1,4 @@
-package com.wugy.java.thread;
+package com.wugy.java.concurrent;
 
 import java.util.concurrent.Exchanger;
 import java.util.concurrent.ExecutorService;
