@@ -154,7 +154,6 @@ class TellerManager implements Runnable {
     private PriorityQueue<Teller> workingTellers = new PriorityQueue<>();
     private Queue<Teller> tellersDoingOtherThings = new LinkedList<>();
     private int adjustmentPeriod;
-    private static Random rand = new Random(47);
 
     public TellerManager(ExecutorService exec, CustomerLine customers, int adjustmentPeriod) {
         this.exec = exec;
