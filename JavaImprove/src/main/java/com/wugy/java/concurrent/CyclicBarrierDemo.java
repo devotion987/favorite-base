@@ -14,7 +14,7 @@ import java.util.concurrent.TimeUnit;
 public class CyclicBarrierDemo {
 
     public static void main(String[] args) {
-        new HorseRace(7, 200);
+        new HorseRace(7, 1000);
     }
 }
 
