@@ -268,8 +268,7 @@ class RobotPool {
         for (Robot r : pool) {
             if (r.getClass().equals(robotType)) {
                 pool.remove(r);
-                r.assignAssembler(d);
-                r.engage(); // Power it up to do the task
+                r.assignAssembler(d).engage(); // Power it up to do the task
                 return;
             }
         }
