@@ -57,8 +57,6 @@ public class NioTest {
 					it.remove();
 				}
 			}
-		} catch (IOException e) {
-			e.printStackTrace();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
