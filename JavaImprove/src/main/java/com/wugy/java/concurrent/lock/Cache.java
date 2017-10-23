@@ -1,4 +1,4 @@
-package com.wugy.java.thread;
+package com.wugy.java.concurrent.lock;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -30,8 +30,9 @@ public class Cache {
         } finally {
             w.unlock();
         }
-    }    // 清空所有的内容
+    }
 
+    // 清空所有的内容
     public static final void clear() {
         w.lock();
         try {

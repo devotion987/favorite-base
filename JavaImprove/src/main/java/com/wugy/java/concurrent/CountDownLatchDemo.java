@@ -67,7 +67,6 @@ class TaskPortion implements Runnable {
         this.latch = latch;
     }
 
-
     @Override
     public void run() {
         try {
