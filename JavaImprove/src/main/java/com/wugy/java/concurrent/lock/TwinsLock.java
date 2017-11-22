@@ -73,7 +73,7 @@ public class TwinsLock implements Lock {
         final Lock lock = new TwinsLock();
         class Worker extends Thread {
             public void run() {
-                while (true) {
+                for (; ; ) {
                     lock.lock();
                     try {
                         Thread.sleep(1000);
