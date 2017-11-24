@@ -27,7 +27,7 @@ class HorseRace {
     private List<Horse> horses = new ArrayList<>();
     private ExecutorService service = Executors.newCachedThreadPool();
 
-    public HorseRace(int nHorses, final int pause) {
+    HorseRace(int nHorses, final int pause) {
         CyclicBarrier barrier = new CyclicBarrier(nHorses, () -> {
             StringBuilder s = new StringBuilder();
             for (int i = 0; i < FINISH_LINE; i++)
@@ -67,11 +67,11 @@ class Horse implements Runnable {
     private int strides = 0;
     private final CyclicBarrier barrier;
 
-    public Horse(CyclicBarrier barrier) {
+    Horse(CyclicBarrier barrier) {
         this.barrier = barrier;
     }
 
-    public synchronized int getStrides() {
+    synchronized int getStrides() {
         return strides;
     }
 
@@ -95,7 +95,7 @@ class Horse implements Runnable {
         return "Horse{" + "id=" + id + '}';
     }
 
-    public String tracks() {
+    String tracks() {
         StringBuilder s = new StringBuilder();
         for (int i = 0; i < getStrides(); i++) s.append("*");
         s.append(id);

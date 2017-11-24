@@ -55,7 +55,7 @@ class Fat {
         return "Fat{" + "id=" + id + '}';
     }
 
-    public void operation() {
+    void operation() {
         System.out.println(this);
     }
 }
@@ -66,7 +66,7 @@ class CheckOutTask<T> implements Runnable {
     private final int id = count++;
     private Pool<T> pool;
 
-    public CheckOutTask(Pool<T> pool) {
+    CheckOutTask(Pool<T> pool) {
         this.pool = pool;
     }
 
@@ -96,7 +96,7 @@ class Pool<T> {
     private volatile boolean[] checkedOut;
     private Semaphore available;
 
-    public Pool(Class<T> classObj, int size) {
+    Pool(Class<T> classObj, int size) {
         this.size = size;
         checkedOut = new boolean[size];
         available = new Semaphore(size, true);
@@ -109,12 +109,12 @@ class Pool<T> {
         }
     }
 
-    public T checkOut() throws InterruptedException {
+    T checkOut() throws InterruptedException {
         available.acquire();
         return getItem();
     }
 
-    public void checkIn(T item) {
+    void checkIn(T item) {
         if (releaseItem(item))
             available.release();
     }

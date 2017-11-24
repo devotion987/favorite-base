@@ -9,8 +9,9 @@ import static java.util.concurrent.TimeUnit.MILLISECONDS;
 import static java.util.concurrent.TimeUnit.NANOSECONDS;
 
 /**
- * DelayQueue是一个无界BlockingQueue，用于放置实现了{@link java.util.concurrent.Delayed}接口的对象，其中的对象只能在其到期时
- * 才能从队列中取走。这种队列是有序的，即对头对象的延迟到期时间最长。如果没有任何延迟到期，那么就不会有任何头元素，并且poll()将返回null
+ * DelayQueue是一个无界BlockingQueue，用于放置实现了{@link java.util.concurrent.Delayed}接口的对象，其中的对象
+ * 只能在其到期时才能从队列中取走。这种队列是有序的，即对头对象的延迟到期时间最长。如果没有任何延迟到期，那么就不会有任何
+ * 头元素，并且poll()将返回null
  * <p>
  * wugy on 2017/10/19 9:54
  */
@@ -34,7 +35,7 @@ class DelayedTaskConsumer implements Runnable {
 
     private DelayQueue<DelayedTask> queue;
 
-    public DelayedTaskConsumer(DelayQueue<DelayedTask> queue) {
+    DelayedTaskConsumer(DelayQueue<DelayedTask> queue) {
         this.queue = queue;
     }
 
@@ -56,9 +57,9 @@ class DelayedTask implements Runnable, Delayed {
     private final int id = count++;
     private final int delta;
     private final long trigger;
-    protected static List<DelayedTask> sequence = new ArrayList<>();
+    static List<DelayedTask> sequence = new ArrayList<>();
 
-    public DelayedTask(int delayInMilliSeconds) {
+    DelayedTask(int delayInMilliSeconds) {
         delta = delayInMilliSeconds;
         trigger = System.nanoTime() + NANOSECONDS.convert(delta, MILLISECONDS);
         sequence.add(this);
@@ -89,7 +90,7 @@ class DelayedTask implements Runnable, Delayed {
         return "DelayedTask{" + "id=" + id + ", delta=" + delta + ", trigger=" + trigger + '}';
     }
 
-    public String summary() {
+    String summary() {
         return "(" + id + ":" + delta + ")";
     }
 
@@ -97,7 +98,7 @@ class DelayedTask implements Runnable, Delayed {
 
         private ExecutorService service;
 
-        public EndSentinel(int delayInMilliSeconds, ExecutorService service) {
+        EndSentinel(int delayInMilliSeconds, ExecutorService service) {
             super(delayInMilliSeconds);
             this.service = service;
         }

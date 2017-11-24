@@ -35,7 +35,7 @@ class WaitTask implements Runnable {
     private final int id = counter++;
     private final CountDownLatch latch;
 
-    public WaitTask(CountDownLatch latch) {
+    WaitTask(CountDownLatch latch) {
         this.latch = latch;
     }
 
@@ -63,7 +63,7 @@ class TaskPortion implements Runnable {
     private static Random rand = new Random(47);
     private final CountDownLatch latch;
 
-    public TaskPortion(CountDownLatch latch) {
+    TaskPortion(CountDownLatch latch) {
         this.latch = latch;
     }
 

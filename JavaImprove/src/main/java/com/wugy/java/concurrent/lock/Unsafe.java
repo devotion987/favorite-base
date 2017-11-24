@@ -3,7 +3,7 @@ package com.wugy.java.concurrent.lock;
 
 import java.lang.reflect.Field;
 
-/***
+/**
  * This class should provide access to low-level operations and its
  * use should be limited to trusted code.  Fields can be accessed using
  * memory addresses, with undefined behaviour occurring if invalid memory
@@ -18,7 +18,7 @@ public class Unsafe {
     // Singleton class.
     private static Unsafe unsafe = new Unsafe();
 
-    /***
+    /**
      * Private default constructor to prevent creation of an arbitrary
      * number of instances.
      * 使用私有默认构造器防止创建多个实例
@@ -26,7 +26,7 @@ public class Unsafe {
     private Unsafe() {
     }
 
-    /***
+    /**
      * Retrieve the singleton instance of <code>Unsafe</code>.  The calling
      * method should guard this instance from untrusted code, as it provides
      * access to low-level operations such as direct memory access.
@@ -44,7 +44,7 @@ public class Unsafe {
         return unsafe;
     }
 
-    /***
+    /**
      * Returns the memory address offset of the given static field.
      * The offset is merely used as a means to access a particular field
      * in the other methods of this class.  The value is unique to the given
@@ -56,11 +56,11 @@ public class Unsafe {
      * @param field the field whose offset should be returned.
      *              需要返回偏移量的field
      * @return the offset of the given field.
-     *         指定field的偏移量
+     * 指定field的偏移量
      */
     public native long objectFieldOffset(Field field);
 
-    /***
+    /**
      * Compares the value of the integer field at the specified offset
      * in the supplied object with the given expected value, and updates
      * it if they match.  The operation of this method should be atomic,
@@ -68,21 +68,20 @@ public class Unsafe {
      * 在obj的offset位置比较integer field和期望的值，如果相同则更新。这个方法
      * 的操作应该是原子的，因此提供了一种不可中断的方式更新integer field。
      *
-     * @param obj the object containing the field to modify.
-     *            包含要修改field的对象
+     * @param obj    the object containing the field to modify.
+     *               包含要修改field的对象
      * @param offset the offset of the integer field within <code>obj</code>.
      *               <code>obj</code>中整型field的偏移量
      * @param expect the expected value of the field.
      *               希望field中存在的值
      * @param update the new value of the field if it equals <code>expect</code>.
-     *           如果期望值expect与field的当前值相同，设置filed的值为这个新值
+     *               如果期望值expect与field的当前值相同，设置filed的值为这个新值
      * @return true if the field was changed.
-     *                             如果field的值被更改
+     * 如果field的值被更改
      */
-    public native boolean compareAndSwapInt(Object obj, long offset,
-                                            int expect, int update);
+    public native boolean compareAndSwapInt(Object obj, long offset, int expect, int update);
 
-    /***
+    /**
      * Compares the value of the long field at the specified offset
      * in the supplied object with the given expected value, and updates
      * it if they match.  The operation of this method should be atomic,
@@ -90,8 +89,8 @@ public class Unsafe {
      * 在obj的offset位置比较long field和期望的值，如果相同则更新。这个方法
      * 的操作应该是原子的，因此提供了一种不可中断的方式更新long field。
      *
-     * @param obj the object containing the field to modify.
-     *              包含要修改field的对象
+     * @param obj    the object containing the field to modify.
+     *               包含要修改field的对象
      * @param offset the offset of the long field within <code>obj</code>.
      *               <code>obj</code>中long型field的偏移量
      * @param expect the expected value of the field.
@@ -99,12 +98,11 @@ public class Unsafe {
      * @param update the new value of the field if it equals <code>expect</code>.
      *               如果期望值expect与field的当前值相同，设置filed的值为这个新值
      * @return true if the field was changed.
-     *              如果field的值被更改
+     * 如果field的值被更改
      */
-    public native boolean compareAndSwapLong(Object obj, long offset,
-                                             long expect, long update);
+    public native boolean compareAndSwapLong(Object obj, long offset, long expect, long update);
 
-    /***
+    /**
      * Compares the value of the object field at the specified offset
      * in the supplied object with the given expected value, and updates
      * it if they match.  The operation of this method should be atomic,
@@ -112,21 +110,20 @@ public class Unsafe {
      * 在obj的offset位置比较object field和期望的值，如果相同则更新。这个方法
      * 的操作应该是原子的，因此提供了一种不可中断的方式更新object field。
      *
-     * @param obj the object containing the field to modify.
-     *    包含要修改field的对象
+     * @param obj    the object containing the field to modify.
+     *               包含要修改field的对象
      * @param offset the offset of the object field within <code>obj</code>.
-     *         <code>obj</code>中object型field的偏移量
+     *               <code>obj</code>中object型field的偏移量
      * @param expect the expected value of the field.
      *               希望field中存在的值
      * @param update the new value of the field if it equals <code>expect</code>.
      *               如果期望值expect与field的当前值相同，设置filed的值为这个新值
      * @return true if the field was changed.
-     *              如果field的值被更改
+     * 如果field的值被更改
      */
-    public native boolean compareAndSwapObject(Object obj, long offset,
-                                               Object expect, Object update);
+    public native boolean compareAndSwapObject(Object obj, long offset, Object expect, Object update);
 
-    /***
+    /**
      * Sets the value of the integer field at the specified offset in the
      * supplied object to the given value.  This is an ordered or lazy
      * version of <code>putIntVolatile(Object,long,int)</code>, which
@@ -148,7 +145,7 @@ public class Unsafe {
      */
     public native void putOrderedInt(Object obj, long offset, int value);
 
-    /***
+    /**
      * Sets the value of the long field at the specified offset in the
      * supplied object to the given value.  This is an ordered or lazy
      * version of <code>putLongVolatile(Object,long,long)</code>, which
@@ -170,7 +167,7 @@ public class Unsafe {
      */
     public native void putOrderedLong(Object obj, long offset, long value);
 
-    /***
+    /**
      * Sets the value of the object field at the specified offset in the
      * supplied object to the given value.  This is an ordered or lazy
      * version of <code>putObjectVolatile(Object,long,Object)</code>, which
@@ -182,16 +179,16 @@ public class Unsafe {
      * 即看到。只有在field被<code>volatile</code>修饰并且期望被意外修改的时候
      * 使用才有用。
      *
-     * @param obj the object containing the field to modify.
-     *    包含需要修改field的对象
+     * @param obj    the object containing the field to modify.
+     *               包含需要修改field的对象
      * @param offset the offset of the object field within <code>obj</code>.
-     *       <code>obj</code>中long型field的偏移量
-     * @param value the new value of the field.
-     *      field将被设置的新值
+     *               <code>obj</code>中long型field的偏移量
+     * @param value  the new value of the field.
+     *               field将被设置的新值
      */
     public native void putOrderedObject(Object obj, long offset, Object value);
 
-    /***
+    /**
      * Sets the value of the integer field at the specified offset in the
      * supplied object to the given value, with volatile store semantics.
      * 设置obj对象中offset偏移地址对应的整型field的值为指定值。支持volatile store语义
@@ -205,7 +202,7 @@ public class Unsafe {
      */
     public native void putIntVolatile(Object obj, long offset, int value);
 
-    /***
+    /**
      * Retrieves the value of the integer field at the specified offset in the
      * supplied object with volatile load semantics.
      * 获取obj对象中offset偏移地址对应的整型field的值,支持volatile load语义。
@@ -217,7 +214,7 @@ public class Unsafe {
      */
     public native int getIntVolatile(Object obj, long offset);
 
-    /***
+    /**
      * Sets the value of the long field at the specified offset in the
      * supplied object to the given value, with volatile store semantics.
      * 设置obj对象中offset偏移地址对应的long型field的值为指定值。支持volatile store语义
@@ -232,7 +229,7 @@ public class Unsafe {
      */
     public native void putLongVolatile(Object obj, long offset, long value);
 
-    /***
+    /**
      * Sets the value of the long field at the specified offset in the
      * supplied object to the given value.
      * 设置obj对象中offset偏移地址对应的long型field的值为指定值。
@@ -247,7 +244,7 @@ public class Unsafe {
      */
     public native void putLong(Object obj, long offset, long value);
 
-    /***
+    /**
      * Retrieves the value of the long field at the specified offset in the
      * supplied object with volatile load semantics.
      * 获取obj对象中offset偏移地址对应的long型field的值,支持volatile load语义。
@@ -260,7 +257,7 @@ public class Unsafe {
      */
     public native long getLongVolatile(Object obj, long offset);
 
-    /***
+    /**
      * Retrieves the value of the long field at the specified offset in the
      * supplied object.
      * 获取obj对象中offset偏移地址对应的long型field的值
@@ -273,7 +270,7 @@ public class Unsafe {
      */
     public native long getLong(Object obj, long offset);
 
-    /***
+    /**
      * Sets the value of the object field at the specified offset in the
      * supplied object to the given value, with volatile store semantics.
      * 设置obj对象中offset偏移地址对应的object型field的值为指定值。支持volatile store语义
@@ -288,7 +285,7 @@ public class Unsafe {
      */
     public native void putObjectVolatile(Object obj, long offset, Object value);
 
-    /***
+    /**
      * Sets the value of the object field at the specified offset in the
      * supplied object to the given value.
      * 设置obj对象中offset偏移地址对应的object型field的值为指定值。
@@ -303,7 +300,7 @@ public class Unsafe {
      */
     public native void putObject(Object obj, long offset, Object value);
 
-    /***
+    /**
      * Retrieves the value of the object field at the specified offset in the
      * supplied object with volatile load semantics.
      * 获取obj对象中offset偏移地址对应的object型field的值,支持volatile load语义。
@@ -315,7 +312,7 @@ public class Unsafe {
      */
     public native Object getObjectVolatile(Object obj, long offset);
 
-    /***
+    /**
      * Returns the offset of the first element for a given array class.
      * To access elements of the array class, this value may be used along with
      * with that returned by
@@ -333,7 +330,7 @@ public class Unsafe {
      */
     public native int arrayBaseOffset(Class arrayClass);
 
-    /***
+    /**
      * Returns the scale factor used for addressing elements of the supplied
      * array class.  Where a suitable scale factor can not be returned (e.g.
      * for primitive types), zero should be returned.  The returned value
@@ -349,7 +346,7 @@ public class Unsafe {
      */
     public native int arrayIndexScale(Class arrayClass);
 
-    /***
+    /**
      * Releases the block on a thread created by
      * <a href="#park"><code>park</code></a>.  This method can also be used
      * to terminate a blockage caused by a prior call to <code>park</code>.
@@ -363,7 +360,7 @@ public class Unsafe {
      */
     public native void unpark(Thread thread);
 
-    /***
+    /**
      * Blocks the thread until a matching
      * <a href="#unpark"><code>unpark</code></a> occurs, the thread is
      * interrupted or the optional timeout expires.  If an <code>unpark</code>

@@ -30,9 +30,9 @@ class PrioritizedTask implements Runnable, Comparable<PrioritizedTask> {
     private static int count = 0;
     private final int id = count++;
     private final int priority;
-    protected static List<PrioritizedTask> sequence = new ArrayList<>();
+    static List<PrioritizedTask> sequence = new ArrayList<>();
 
-    public PrioritizedTask(int priority) {
+    PrioritizedTask(int priority) {
         this.priority = priority;
         sequence.add(this);
     }
@@ -57,7 +57,7 @@ class PrioritizedTask implements Runnable, Comparable<PrioritizedTask> {
         return "PrioritizedTask{" + "id=" + id + ", priority=" + priority + '}';
     }
 
-    public String summary() {
+    String summary() {
         return "(" + id + ":" + priority + ")";
     }
 
@@ -65,7 +65,7 @@ class PrioritizedTask implements Runnable, Comparable<PrioritizedTask> {
 
         private ExecutorService exec;
 
-        public EndSentinel(ExecutorService exec) {
+        EndSentinel(ExecutorService exec) {
             super(-1);
             this.exec = exec;
         }
@@ -89,7 +89,7 @@ class PrioritizedTaskConsumer implements Runnable {
 
     private PriorityBlockingQueue<Runnable> queue;
 
-    public PrioritizedTaskConsumer(PriorityBlockingQueue<Runnable> queue) {
+    PrioritizedTaskConsumer(PriorityBlockingQueue<Runnable> queue) {
         this.queue = queue;
     }
 
@@ -111,7 +111,7 @@ class PrioritizedTaskProducer implements Runnable {
     private Queue<Runnable> queue;
     private ExecutorService exec;
 
-    public PrioritizedTaskProducer(Queue<Runnable> queue, ExecutorService exec) {
+    PrioritizedTaskProducer(Queue<Runnable> queue, ExecutorService exec) {
         this.queue = queue;
         this.exec = exec;
     }
