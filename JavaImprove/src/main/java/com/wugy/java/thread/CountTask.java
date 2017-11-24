@@ -1,5 +1,7 @@
 package com.wugy.java.thread;
 
+import javafx.scene.control.Cell;
+
 import java.util.concurrent.ForkJoinPool;
 import java.util.concurrent.Future;
 import java.util.concurrent.RecursiveTask;
@@ -10,7 +12,7 @@ public class CountTask extends RecursiveTask<Integer> {
     private int start;
     private int end;
 
-    public CountTask(int start, int end) {
+    CountTask(int start, int end) {
         this.start = start;
         this.end = end;
     }

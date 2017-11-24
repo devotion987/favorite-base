@@ -24,6 +24,7 @@ public class ExchangerTest {
                 String A = "银行流水A";// A录入银行流水数据
                 exgr.exchange(A);
             } catch (InterruptedException e) {
+                e.printStackTrace();
             }
         });
         threadPool.execute(() -> {
@@ -32,6 +33,7 @@ public class ExchangerTest {
                 String A = exgr.exchange(B);
                 System.out.println("A和B数据是否一致：" + A.equals(B) + "，A录入的是：" + A + "，B录入是：" + B);
             } catch (InterruptedException e) {
+                e.printStackTrace();
             }
         });
         threadPool.shutdown();

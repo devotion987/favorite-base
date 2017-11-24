@@ -5,8 +5,8 @@ import java.util.List;
 import java.util.concurrent.*;
 
 /**
- * Semaphore：正常的锁（来自concurrent.locks或内建的synchronized锁）在任何时刻都只允许一个任务访问一项资源，计数信号量允许n个
- * 任务同时访问该资源。
+ * Semaphore：正常的锁（来自concurrent.locks或内建的synchronized锁）在任何时刻都只允许一个任务访问一项资源，
+ * 计数信号量允许n个任务同时访问该资源。
  * <p>
  * wugy on 2017/10/19 11:36
  */

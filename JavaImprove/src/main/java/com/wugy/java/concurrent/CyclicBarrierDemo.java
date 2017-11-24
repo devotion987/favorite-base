@@ -9,8 +9,8 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
 /**
- * CyclicBarrier：创建一组任务，它们并行地执行工作，在进行下一步骤之前等待，直至所有任务都完成（有些像join()）。它使得所有并行任务都将在
- * 栅栏处列队，因此可以一致向前移动。
+ * CyclicBarrier：创建一组任务，它们并行地执行工作，在进行下一步骤之前等待，直至所有任务都完成（有些像join()）。
+ * 它使得所有并行任务都将在栅栏处列队，因此可以一致向前移动。
  * <p>
  * wugy on 2017/10/19 16:03
  */
