@@ -38,11 +38,6 @@
             <artifactId>cglib-nodep</artifactId>
             <version>3.1</version>
         </dependency>
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-lang3</artifactId>
-            <version>3.4</version>
-        </dependency>
 
         <!-- <dependency> <groupId>taglibs</groupId> <artifactId>standard</artifactId>
             <version>1.1.2</version> <type>jar</type> </dependency> <dependency> <groupId>javax.servlet</groupId>
@@ -173,8 +168,6 @@
             <artifactId>asm</artifactId>
             <version>3.3.1</version>
         </dependency>
-
-
 
     </dependencies>
 
