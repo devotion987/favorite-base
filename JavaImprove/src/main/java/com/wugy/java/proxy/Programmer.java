@@ -17,7 +17,7 @@ public class Programmer {
 
     private static class MyClassLoader extends ClassLoader {
 
-        public Class<?> defineMyClass(byte[] b, int off, int len) {
+        Class<?> defineMyClass(byte[] b, int off, int len) {
             return super.defineClass(null, b, off, len);
         }
     }

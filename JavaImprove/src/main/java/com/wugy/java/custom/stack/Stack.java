@@ -6,8 +6,6 @@ public class Stack<T> {
 
 	/**
 	 * 压栈
-	 * 
-	 * @param data
 	 */
 	public void push(T data) {
 		Node<T> node = new Node<T>();
@@ -21,8 +19,6 @@ public class Stack<T> {
 
 	/**
 	 * 取出栈顶元素“弹出”（移除）
-	 * 
-	 * @return
 	 */
 	public T pop() {
 		T data = null;
@@ -35,8 +31,6 @@ public class Stack<T> {
 
 	/**
 	 * 取出栈顶元素不“弹出”（移除）
-	 * 
-	 * @return
 	 */
 	public T peek() {
 		return top.getData();

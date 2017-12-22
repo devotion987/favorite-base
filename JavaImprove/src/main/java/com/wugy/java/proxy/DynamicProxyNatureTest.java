@@ -86,7 +86,7 @@ public class DynamicProxyNatureTest {
 
         final Object delegate;
 
-        public JdkHandler(Object delegate) {
+        JdkHandler(Object delegate) {
             this.delegate = delegate;
         }
 
@@ -107,7 +107,7 @@ public class DynamicProxyNatureTest {
 
         final Object delegate;
 
-        public CglibInterceptor(Object delegate) {
+        CglibInterceptor(Object delegate) {
             this.delegate = delegate;
         }
 
@@ -130,7 +130,7 @@ public class DynamicProxyNatureTest {
 
         final Object delegate;
 
-        public JavassistInterceptor(Object delegate) {
+        JavassistInterceptor(Object delegate) {
             this.delegate = delegate;
         }
 
@@ -194,7 +194,7 @@ public class DynamicProxyNatureTest {
 
     private static class ByteArrayClassLoader extends ClassLoader {
 
-        public ByteArrayClassLoader() {
+        ByteArrayClassLoader() {
             super(ByteArrayClassLoader.class.getClassLoader());
         }
 
