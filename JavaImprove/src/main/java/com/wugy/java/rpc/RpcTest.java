@@ -3,9 +3,19 @@ package com.wugy.java.rpc;
 import org.junit.Test;
 
 /**
- * devotion on 2017-01-21 19:44
+ * wugy 2017-12-28 13:19
  */
-public class RpcConsumer {
+public class RpcTest {
+
+    @Test
+    public void testRpcProvider () {
+        HelloService helloService = new HelloServiceImpl();
+        try {
+            RpcFramework.export(helloService, 1234);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
     @Test
     public void testRpcConsumer() {
